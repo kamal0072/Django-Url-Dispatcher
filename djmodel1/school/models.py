@@ -7,3 +7,6 @@ class StudentModel(models.Model):
     s_email=models.EmailField(max_length=90)
     s_pass=models.CharField(max_length=90)
 
+    def __str__(self):
+        return str(self.s_roll)
+    
