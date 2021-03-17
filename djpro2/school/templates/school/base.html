@@ -18,7 +18,7 @@
     <h1>Base One</h1>
     <h1>Base Two</h1>
     <h1>Base Three</h1><br>
-    {% include 'school/toprankers.html' %}
+    {% include 'school/toprankers.html' with x="Python" %}
     <a href="{% url 'main' %}">Go To Main</a>
 </body>
 </html>

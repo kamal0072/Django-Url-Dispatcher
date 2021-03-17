@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 def main(request):
     title1='Django'
-    return render(request,'school/main.html',{'title1':title1})
+    return render(request,'school/main.html',{'title1':title1,'var':'MyDJango'})
 
 def about(request):
     title2="DRF"
