@@ -7,5 +7,9 @@ def emplyeview(request):
     # em=EmployeForm(auto_id=True)
     # em=EmployeForm(auto_id=False)
     # em=EmployeForm(auto_id='anystring')
-    em=EmployeForm(auto_id=True,label_suffix=':')
+    # em=EmployeForm(auto_id=True)
+    #ordering fields 
+    # em.order_fields(field_order=('e_email','e_pass','e_name'))
+    # em.order_fields(field_order=('e_email','e_name','e_pass'))
+    em=EmployeForm()
     return render(request,'myform/home.html',{'emp':em})

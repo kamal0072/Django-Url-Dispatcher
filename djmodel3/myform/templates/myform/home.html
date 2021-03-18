@@ -9,11 +9,31 @@
 <body>
     <h1>This Is Django Form</h1>
     <form action="" method="get" novalidate>
-        {{emp.as_p}}
-        {% comment %} {{emp.e_name}}<br><br> {% endcomment %}
+{% comment %}     
+    {% for em in emp %}
+        {{em.label}}<br>
+        {{em.label_tag}}<br>
+        {{em.as_p}}<br>
+    {% endfor %} {% endcomment %}
+       {{emp.as_p}}
     <input type="submit" value="Save">
     <input type="submit" value="Cancel">
-    </form>
+    </form><hr>
+
+    {% comment %} <h1>This Is Django Form</h1>
+    <form action="" method="get" novalidate>
+        {{emp.as_p}}
+        {% comment %} {{emp.e_name}}<hr> {% endcomment %}
+    {% comment %} <input type="submit" value="Save">
+    <input type="submit" value="Cancel">
+    </form><hr> {% endcomment %} 
+
+    {% comment %} <div>
+        <label for="{{emp.e_name.id_for_label}}">Name</label>
+        <input type="text" name="name" required id="id_name">
+        {{emp.e_name}}
+        {{emp.e_email}}
+    </div> {% endcomment %}
 
 </body>
 </html>
