@@ -9,42 +9,21 @@
 <body>
     <h1>This Is Django Form</h1>
     <form action="" method="get" novalidate>
-       {{emp.as_p}}
+        {% for emp in emp.visible_fields  %}
+            {% comment %} {{emp.label}}<br> {% endcomment %}
+            {% comment %} {{emp.label_tag}}<br> {% endcomment %}
+            {{emp.label_tag}}<br>
+            {{emo}}
+        {% endfor %}<hr>
+
+         {% for emp in emp.is_hidden_fiels  %}
+            {% comment %} {{emp.label}}<br> {% endcomment %}
+            {% comment %} {{emp.label_tag}}<br> {% endcomment %}
+            {{emp}}p<br>
+            {{emo}}
+        {% endfor %}<hr>
     <input type="submit" value="Save">
     <input type="submit" value="Cancel">
-    </form><hr>
-    
-    <div>
-    {{emp.e_name.label}}<br>
-    {{emp.e_name.value}}<br>
-    {{emp.e_name.html_name}}<br>
-    {{emp.e_name.help_text}}<br>
-    {{emp.e_name.field.required}}<br>
-    </div>
-    <hr>
-    <div>
-    {{emp.e_address.label}}<br>
-    {{emp.e_address.value}}<br>
-    {{emp.e_address.html_name}}<br>
-    {{emp.e_address.help_text}}<br>
-    {{emp.e_address.field.required}}<br>
-    </div>
-    <hr>
-    <div>
-    {{emp.e_email.label}}<br>
-    {{emp.e_email.value}}<br>
-    {{emp.e_email.html_name}}<br>
-    {{emp.e_email.help_text}}<br>
-    {{emp.e_email.field.required}}<br>
-    </div>
-
-     <hr>
-    <div>
-    {{emp.e_pass.label}}<br>
-    {{emp.e_pass.value}}<br>
-    {{emp.e_pass.html_name}}<br>
-    {{emp.e_pass.help_text}}<br>
-    {{emp.e_pass.field.required}}<br>
-    </div>
+    </form>
 </body>
 </html>

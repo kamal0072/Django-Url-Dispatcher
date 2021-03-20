@@ -15,5 +15,5 @@ class EmployeForm(forms.Form):
 
     e_pass=forms.CharField(label='Employe Password',required=True,
     help_text='Enter maximum 70 char..',widget=forms.PasswordInput())
-    
+    e_phone=forms.CharField(widget=forms.HiddenInput())
 
