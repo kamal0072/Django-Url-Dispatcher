@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Froms</title>
     <style>
+        table,tr,th,td,button{
+            border:2px solid red;
+            border-collapse:collapse;
+            margin-left:100px;
+        }
         body{
             background-color:lightblue;
         }
-        #form,h1{
+        #form{
             margin-left:400px;
         }
         .errorlist{
@@ -19,13 +24,15 @@
             margin:0;
             padding:0;
         }
+        #stu{
+            margin:20px;
+        }
     </style>
     </head>
 <body>
     <h1>This Is Django Form</h1>
     <div id='form'>
         <form action="" method="POST" novalidate>
-
       {% csrf_token %}
       
          {{emp.as_p}}<br>
@@ -33,8 +40,30 @@
     <input type="submit" value="SignUp">
     {% comment %} <input type="submit" value="delete">
     <input type="submit" value="Cancel"> {% endcomment %}
-    </form>
-    
+    </form><br>
+    </div>
+    <div id='stu'>
+        <h1>-------Saved Detail------</h1>
+            
+                <table><tr>
+                    <th>EMPLOYEE ID</th>
+                    <th>EMPLOYEE NAME</th>
+                    <th>EMPLOYEE PASSWORD</th>
+                    <th>EMPLOYEE EMAIL</th>
+                   </tr>
+                    {% for stu in stu %}
+                    <tr>
+                        <td>{{stu.id}}</td>
+                        <td>{{stu.ename}}</td>
+                        <td>{{stu.epass}}</td>
+                        <td>{{stu.email}}</td>
+                    </tr>
+                    {% endfor %}          
+                
+                </table>
+
+            <button><a href="">Delete</a></button>
+            <button><a href="">Edit</a></button>
     </div>
 </body>
 </html>

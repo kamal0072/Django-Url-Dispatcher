@@ -3,6 +3,7 @@ from .forms import EmployeForm
 from .models import Student
 
 def emplyeview(request):
+    stu1=Student.objects.all()
     if request.method=="POST":
         em=EmployeForm(request.POST)
         if em.is_valid():
@@ -19,5 +20,6 @@ def emplyeview(request):
     else:
         print("Data Coming From Get Request-------")
         em=EmployeForm()
-    return render(request,'myform/home.html',{'emp':em})
+    return render(request,'myform/home.html',{'emp':em,'stu':stu1})
 
+    
