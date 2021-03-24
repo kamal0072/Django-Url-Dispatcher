@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Form</title>
+</head>
+<body>
+    <h1> User Login Form</h1>
+        <form action="" method="post" novalidate>
+        {% csrf_token %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    {{error}}
+                {% endfor %}
+            {% endif %}
+               {% for form in login %}
+            {{form.label_tag}}
+            {{form}}
+            {{form.errors|striptags}}<br><br>
+               {% endfor %} 
+            <input type="submit" value="Login">
+                <button>
+            <a href="{% url 'signp' %}">SignUp </a>
+                </button>
+        </form>
+</body>
+</html>
