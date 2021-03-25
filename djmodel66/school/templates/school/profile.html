@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        .form,a,h1{
+            color:blue;
+            margin-left:200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile Page</h1>
+    <h1>welocom</h1>
+        <div class='form'> 
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+            {% for form in form %}
+                {{form.label}}{{form}}<br><br>
+            {% endfor %}
+        <input type="submit" value="save">
+    </form>
+        </div>
+
+    {% if messages %}
+        {% for  msg in messages %}
+                {{msg}}
+        {% endfor %}
+    {% endif %}
+    <a href="{% url 'login' %}">Logout</a>
+    <a href="{% url 'passwaedchange' %}">Change Password</a>
+</body>
+</html>
