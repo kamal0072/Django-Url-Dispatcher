@@ -13,6 +13,7 @@ from datetime import datetime,timedelta
 #     response.set_cookie('name2','sonam',expires=datetime.utcnow()+timedelta(days=2))
 #     return response
 
+
 def setsignedcookie(request):
     response=render(request,'school/setcookies.html')
     response.set_signed_cookie('name','admincookies',salt='admn')
